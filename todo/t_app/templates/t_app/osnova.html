@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазины</title>
+</head>
+<body>
+    <h1>Магазины</h1>
+    <ul>
+        {% for store in data %}
+            <li>
+                <a href="{% url 'infoKategory' store.id %}">{{ store.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

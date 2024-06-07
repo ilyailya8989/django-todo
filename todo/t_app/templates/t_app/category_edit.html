@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактировать категорию</title>
+</head>
+<body>
+    <h1>Редактировать категорию</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="category_name">Название категории:</label>
+            <input type="text" name="category_name" id="category_name" value="{{ category.name }}" required>
+        </p>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <a href="{% url 'infoKategory' category.store.id %}">Назад к категориям</a>
+</body>
+</html>

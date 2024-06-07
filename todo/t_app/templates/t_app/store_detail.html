@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ store.name }}</title>
+</head>
+<body>
+    <h1>{{ store.name }} - Категории продуктов</h1>
+    <a href="{% url 'add_cat' store.id %}">Добавить категорию</a>
+    <ul>
+        {% for category in categories %}
+            <li>
+                {{ category.name }}
+                <a href="{% url 'change_cat_page' store.id category.id %}">Редактировать</a>
+                <a href="{% url 'del_cat' store.id category.id %}">Удалить</a>
+                <a href="{% url 'product_list' store.id category.id %}">Продукты</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'osnova' %}">Назад к магазинам</a>
+</body>
+</html>

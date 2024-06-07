@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить продукт</title>
+</head>
+<body>
+    <h1>Добавить продукт</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="product_name">Название продукта:</label>
+            <input type="text" name="product_name" id="product_name" required>
+        </p>
+        <p>
+            <label for="product_price">Цена продукта:</label>
+            <input type="text" name="product_price" id="product_price" required>
+        </p>
+        <button type="submit">Добавить продукт</button>
+    </form>
+    <a href="{% url 'product_list' category.store.id category.id %}">Назад к продуктам</a>
+</body>
+</html>
